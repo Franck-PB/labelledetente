@@ -71,3 +71,62 @@ Référentiel interne : `notebooklm-note-les-10-commandements-du-code-critique-d
 - Simplicité, fonctions courtes, validations systématiques
 - Gestion d’erreurs explicite, pas de comportements implicites
 - Zéro secret dans le repo, variables d’environnement documentées
+
+---
+
+## Décisions UX Premium (Verrouillées)
+
+### Homepage
+La page d’accueil suit obligatoirement l’ordre suivant :
+
+1. Expérience et promesse (Hero)
+2. Présentation courte
+3. Aperçu des massages (slider navigationnel)
+4. Sections massages détaillées (narratives)
+5. Preuves premium
+6. Section Professionnels
+7. Zone d’intervention
+8. FAQ courte
+9. CTA final
+
+Les prestations ne sont jamais présentées sous forme de catalogue tarifaire.
+
+---
+
+### Sticky CTA Mobile
+Un bouton mobile fixe "Réserver un massage" est affiché :
+
+- uniquement sur mobile
+- après sortie du Hero
+- masqué sur :
+  - `/reservation`
+  - `/reservation/*`
+
+Objectif : accès permanent à la réservation sans perturber le parcours.
+
+---
+
+### Parcours Réservation
+Le parcours réservation suit obligatoirement :
+
+Prestations  
+→ Choix expérience  
+→ Choix durée  
+→ Agenda Cal.com embed
+
+Un agenda ne doit jamais être affiché sans choix préalable d’une expérience.
+
+---
+
+### Présentation des Prestations
+Chaque massage est présenté selon l’ordre :
+
+1. Ressenti / promesse
+2. Projection émotionnelle
+3. Pour qui
+4. Déroulé
+5. Durées disponibles
+6. Prix
+7. CTA
+
+Le prix apparaît toujours après la création de valeur.
