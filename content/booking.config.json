@@ -1,44 +1,22 @@
-# Roadmap (agent codeur)
-
-## 1, Setup
-- Init Next.js App Router, TypeScript
-- Tailwind
-- ESLint, Prettier
-- Structure dossiers : app, components, content, lib, scripts, docs
-
-## 2, Contenu
-- Charger JSON, Markdown
-- Implémenter toggles via `content/site.config.json`
-- Créer lib `lib/services.ts` et `lib/config.ts` pour encapsuler lectures et validations
-
-## 3, UI
-- Layout, header, footer, mobile-first
-- Pages : home, prestations, professionnels, réservation, contact, zones, à-propos
-- Composants : ServiceCard, CTA, FAQ, Section, CalEmbed
-
-## 4, Booking
-- `/reservation` liste des massages bookables
-- `/reservation/[serviceId]` embed Cal.com via slug mapping
-- Fallback vers booking général si mapping absent
-
-## 5, SEO et perf
-- Metadata par page
-- JSON-LD
-- Sitemap, robots
-- Next Image, lazy
-- Accessibilité
-
-## 6, Formulaires
-- Contact pros, demandes spécifiques
-- Anti-spam, rate limit
-- Envoi email via provider (Resend recommandé)
-- Messages de succès clairs
-
-## 7, Validation
-- Script `pnpm validate` (zod) : contenus, mapping, sections
-- Script `pnpm lint`, `pnpm test` (si tests)
-- Lighthouse mobile
-
-## 8, Déploiement
-- Vercel via GitHub
-- Domaine + Plausible
+{
+  "provider": "cal.com",
+  "publicProfile": "https://cal.com/<slug-elodie>",
+  "fallbackEventSlug": "<fallback-general-event>",
+  "mapping": {
+    "summit60": "<event-slug-summit-60>",
+    "summit90": "<event-slug-summit-90>",
+    "alpine60": "<event-slug-alpine-60>",
+    "alpine90": "<event-slug-alpine-90>",
+    "elegance60": "<event-slug-elegance-60>",
+    "elegance90": "<event-slug-elegance-90>"
+  },
+  "fallbackRoute": "/reservation",
+  "mapping": {
+    "summit60": "massage-60min",
+    "summit90": "massage-90min",
+    "alpine60": "recup-60min",
+    "alpine90": "recup-90min",
+    "elegance60": "elegance-60min",
+    "elegance90": "elegance-90min"
+  }
+}
