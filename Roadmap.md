@@ -15,6 +15,11 @@
 - Layout, header, footer, mobile-first
 - Pages : home, prestations, professionnels, réservation, contact, zones, à-propos
 - Composants : ServiceCard, CTA, FAQ, Section, CalEmbed
+- ## Sticky CTA Mobile
+- Implémenter StickyBookingCTA
+- Visible uniquement mobile
+- Caché sur routes réservation
+- Redirige vers /reservation
 
 ## 4, Booking
 - `/reservation` liste des massages bookables
