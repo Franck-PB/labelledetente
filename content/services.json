@@ -1,80 +1,91 @@
 {
-  "services": [
+  "experiences": [
     {
-      "id": "summit60",
+      "id": "summits",
       "name": "L’Instant des Sommets",
-      "duration": 60,
-      "price": 80,
-      "bookable": true,
-      "audience": "particulier",
-      "shortTagline": "Un massage relaxant inspiré des sommets alpins.",
-      "benefits": [
-        "Relâche les tensions et apaise le mental",
-        "Améliore la qualité de récupération",
-        "Réactive une sensation de légèreté"
-      ],
-      "forWho": [
-        "Stress, fatigue, surcharge mentale",
-        "Retour de ski, randonnée, voyages",
+      "tagline": "Une profonde détente inspirée du calme des paysages alpins.",
+      "emotionalHook": "Relâchez les tensions accumulées et retrouvez une sensation de légèreté durable.",
+      "idealFor": [
+        "Stress et fatigue mentale",
+        "Séjours en montagne",
         "Besoin de lâcher prise"
       ],
-      "whatToPrepare": [
-        "Une pièce calme, chauffée",
-        "Accès à un point d’eau si possible",
-        "Prévoir 10 min avant, après"
+      "flow": [
+        "Installation confortable à domicile",
+        "Massage personnalisé",
+        "Temps de retour au calme"
+      ],
+      "durations": [
+        {
+          "id": "summit60",
+          "label": "60 minutes",
+          "price": 80,
+          "recommended": true
+        },
+        {
+          "id": "summit90",
+          "label": "90 minutes",
+          "price": 120
+        }
       ]
     },
     {
-      "id": "summit90",
-      "name": "L’Instant des Sommets",
-      "duration": 90,
-      "price": 120,
-      "bookable": true,
-      "audience": "particulier"
-    },
-    {
-      "id": "alpine60",
+      "id": "alpine",
       "name": "Récup’Alpine",
-      "duration": 60,
-      "price": 100,
-      "bookable": true,
-      "audience": "particulier"
+      "tagline": "Un massage profond pour favoriser la récupération musculaire.",
+      "emotionalHook": "Idéal après une activité physique ou une journée intense.",
+      "idealFor": [
+        "Après ski ou randonnée",
+        "Fatigue musculaire",
+        "Récupération sportive"
+      ],
+      "flow": [
+        "Analyse des zones de tension",
+        "Travail musculaire ciblé",
+        "Relâchement progressif"
+      ],
+      "durations": [
+        {
+          "id": "alpine60",
+          "label": "60 minutes",
+          "price": 100,
+          "recommended": true
+        },
+        {
+          "id": "alpine90",
+          "label": "90 minutes",
+          "price": 140
+        }
+      ]
     },
     {
-      "id": "alpine90",
-      "name": "Récup’Alpine",
-      "duration": 90,
-      "price": 140,
-      "bookable": true,
-      "audience": "particulier"
-    },
-    {
-      "id": "elegance60",
-      "name": "L’Ascension élégante",
-      "duration": 60,
-      "price": 100,
-      "bookable": true,
-      "audience": "particulier"
-    },
-    {
-      "id": "elegance90",
-      "name": "L’Ascension élégante",
-      "duration": 90,
-      "price": 140,
-      "bookable": true,
-      "audience": "particulier"
-    },
-    {
-      "id": "pro-hotel-intro",
-      "name": "Collaboration Hôtelière",
-      "bookable": false,
-      "audience": "professionnel"
-    },
-    {
-      "id": "pro-ehpad-intro",
-      "name": "Interventions en EHPAD",
-      "bookable": false,
-      "audience": "professionnel"
+      "id": "elegance",
+      "name": "L’Ascension Élégante",
+      "tagline": "Une expérience enveloppante pour un relâchement global.",
+      "emotionalHook": "Un moment complet pour reconnecter corps et esprit.",
+      "idealFor": [
+        "Fatigue générale",
+        "Besoin de recentrage",
+        "Moment de détente profonde"
+      ],
+      "flow": [
+        "Accueil et installation",
+        "Massage fluide et harmonisant",
+        "Relaxation finale"
+      ],
+      "durations": [
+        {
+          "id": "elegance60",
+          "label": "60 minutes",
+          "price": 100,
+          "recommended": true
+        },
+        {
+          "id": "elegance90",
+          "label": "90 minutes",
+          "price": 140
+        }
+      ]
     }
   ]
 }
