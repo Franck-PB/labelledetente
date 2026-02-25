@@ -1,0 +1,80 @@
+{
+  "services": [
+    {
+      "id": "summit60",
+      "name": "L’Instant des Sommets",
+      "duration": 60,
+      "price": 80,
+      "bookable": true,
+      "audience": "particulier",
+      "shortTagline": "Un massage relaxant inspiré des sommets alpins.",
+      "benefits": [
+        "Relâche les tensions et apaise le mental",
+        "Améliore la qualité de récupération",
+        "Réactive une sensation de légèreté"
+      ],
+      "forWho": [
+        "Stress, fatigue, surcharge mentale",
+        "Retour de ski, randonnée, voyages",
+        "Besoin de lâcher prise"
+      ],
+      "whatToPrepare": [
+        "Une pièce calme, chauffée",
+        "Accès à un point d’eau si possible",
+        "Prévoir 10 min avant, après"
+      ]
+    },
+    {
+      "id": "summit90",
+      "name": "L’Instant des Sommets",
+      "duration": 90,
+      "price": 120,
+      "bookable": true,
+      "audience": "particulier"
+    },
+    {
+      "id": "alpine60",
+      "name": "Récup’Alpine",
+      "duration": 60,
+      "price": 100,
+      "bookable": true,
+      "audience": "particulier"
+    },
+    {
+      "id": "alpine90",
+      "name": "Récup’Alpine",
+      "duration": 90,
+      "price": 140,
+      "bookable": true,
+      "audience": "particulier"
+    },
+    {
+      "id": "elegance60",
+      "name": "L’Ascension élégante",
+      "duration": 60,
+      "price": 100,
+      "bookable": true,
+      "audience": "particulier"
+    },
+    {
+      "id": "elegance90",
+      "name": "L’Ascension élégante",
+      "duration": 90,
+      "price": 140,
+      "bookable": true,
+      "audience": "particulier"
+    },
+    {
+      "id": "pro-hotel-intro",
+      "name": "Collaboration Hôtelière",
+      "bookable": false,
+      "audience": "professionnel"
+    },
+    {
+      "id": "pro-ehpad-intro",
+      "name": "Interventions en EHPAD",
+      "bookable": false,
+      "audience": "professionnel"
+    }
+  ]
+}
