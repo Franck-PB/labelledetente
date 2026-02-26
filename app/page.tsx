@@ -65,10 +65,14 @@ export default function HomePage() {
         </div>
 
         {/* Brand mark — upper hero area, below cream header */}
-        <div className="relative z-[var(--z-raised)] pt-20 md:pt-24 flex justify-center px-6">
+        <div className="relative z-[var(--z-raised)] pt-20 md:pt-24 flex justify-center">
           <p
-            className="font-[family-name:var(--font-brand)] text-[var(--color-cream-50)] text-center drop-shadow-lg"
-            style={{ fontSize: 'var(--fs-brand-hero)' }}
+            className="font-[family-name:var(--font-brand)] text-[var(--color-cream-50)] text-center"
+            style={{
+              fontSize: 'var(--fs-brand-hero)',
+              padding: '0.05em 0.5em 0.2em',
+              textShadow: '0 2px 12px rgba(0,0,0,0.45)',
+            }}
             aria-hidden="true"
           >
             La Belle Détente
