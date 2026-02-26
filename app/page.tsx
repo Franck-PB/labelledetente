@@ -274,8 +274,8 @@ export default function HomePage() {
                 <span className="label-eyebrow text-[var(--color-earth-700)]">Satisfaction</span>
               </div>
             </div>
-            <ButtonLink href="/professionnels" variant="outline" size="md" withArrow className="self-start border-[var(--color-earth-900)] text-[var(--color-earth-900)] hover:bg-[var(--color-earth-900)]/10">
-              Collaborer avec La Belle Détente
+            <ButtonLink href="/professionnels" variant="outline" size="md" withArrow className="w-full sm:w-auto self-start border-[var(--color-earth-900)] text-[var(--color-earth-900)] hover:bg-[var(--color-earth-900)]/10">
+              Devenir partenaire
             </ButtonLink>
           </div>
           <div className="w-full md:w-1/2">
@@ -304,7 +304,7 @@ export default function HomePage() {
           ))}
         </div>
         <ButtonLink href="/zones" variant="ghost" size="sm" withArrow>
-          Voir toutes les zones
+          Voir tous les secteurs
         </ButtonLink>
       </SectionContainer>
 
