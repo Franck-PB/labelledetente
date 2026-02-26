@@ -1,18 +1,17 @@
 'use client'
 
 import { useState } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useSearchParams } from 'next/navigation'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { Heading, Eyebrow, Body, BrandScript } from '@/components/ui/Typography'
-import { ImageBlock } from '@/components/ui/ImageBlock'
+import Image from 'next/image'
 import { DurationSelector } from '@/components/ui/DurationSelector'
-import { Button } from '@/components/ui/Button'
+import { ButtonLink } from '@/components/ui/Button'
 import { Badge } from '@/components/ui/Badge'
 import { getAllExperiences } from '@/lib/services'
 
 
 export function ReservationContent() {
-  const router = useRouter()
   const searchParams = useSearchParams()
   const experiences = getAllExperiences()
 
@@ -36,11 +35,6 @@ export function ReservationContent() {
     setSelectedExpId(id)
     const rec = exp.durations.find((d) => d.recommended) ?? exp.durations[0]
     if (rec) setSelectedDurationId(rec.id)
-  }
-
-  const handleBook = () => {
-    if (!selectedDurationId) return
-    router.push(`/reservation/${selectedDurationId}`)
   }
 
   return (
@@ -68,7 +62,7 @@ export function ReservationContent() {
                     : 'border-[var(--color-border-subtle)] hover:border-[var(--color-sand-300)]'
                   }
                 `}
-                onClick={() => handleSelectExperience(exp.id)}
+                onClick={() => { if (!isSelected) handleSelectExperience(exp.id) }}
                 role="radio"
                 aria-checked={isSelected}
                 tabIndex={0}
@@ -79,50 +73,69 @@ export function ReservationContent() {
                   }
                 }}
               >
-                {/* Image */}
-                <div className="relative">
-                  <ImageBlock
-                    src={exp.imageSrc ?? '/images/hero-setup.jpg'}
-                    alt={exp.name}
-                    aspect="wide"
-                    radius="none"
-                    className="rounded-t-[var(--radius-xl)]"
-                  />
+                {/* Image — outer clippe, inner déborde pour montrer plus de contenu (dezoom) */}
+                <div
+                  className="relative overflow-hidden rounded-t-[var(--radius-xl)]"
+                  style={{ aspectRatio: '5/2' }}
+                >
                   {i === 0 && (
-                    <Badge className="absolute top-3 left-3">Populaire</Badge>
+                    <Badge className="absolute top-3 left-3 z-10">Populaire</Badge>
                   )}
+                  <div className="absolute" style={{ inset: '-8%' }}>
+                    <Image
+                      src={exp.imageSrc ?? '/images/hero-setup.jpg'}
+                      alt={exp.name}
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 768px) 100vw, 600px"
+                    />
+                  </div>
                 </div>
 
                 {/* Info */}
-                <div className="p-5 flex flex-col gap-4">
-                  <div>
-                    <Heading level={3} className="mb-1">{exp.name}</Heading>
-                    <Body size="sm" muted className="line-clamp-2">{exp.emotionalHook}</Body>
-                  </div>
+                <div className="p-5 flex flex-col gap-3">
+                  <Heading level={3}>{exp.name}</Heading>
+
+                  {/* Accroche émotionnelle */}
+                  <Body size="sm" muted>{exp.emotionalHook}</Body>
+
+                  {/* Descriptif — pour qui / quand */}
+                  <ul className="flex flex-col gap-1">
+                    {exp.idealFor.map((item) => (
+                      <li key={item} className="flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" aria-hidden="true" />
+                        <span
+                          className="font-[family-name:var(--font-body)] text-[var(--color-text-secondary)]"
+                          style={{ fontSize: 'var(--fs-body-sm)' }}
+                        >
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
 
                   {isSelected ? (
-                    <div className="flex flex-col gap-4">
+                    <div className="flex flex-col gap-4 pt-1 border-t border-[var(--color-linen-200)]">
                       <DurationSelector
                         options={exp.durations}
                         value={selectedDurationId}
                         onChange={setSelectedDurationId}
                       />
-                      <div className="flex items-center justify-between pt-2 border-t border-[var(--color-linen-200)]">
+                      <div className="flex items-center justify-between">
                         <div className="flex flex-col">
                           <Eyebrow className="text-[var(--color-stone-500)]">Total estimé</Eyebrow>
                           <span className="font-[family-name:var(--font-display)] text-[var(--text-xl)] font-bold text-[var(--color-earth-900)]">
                             {selectedDuration ? `${selectedDuration.price}€` : '—'}
                           </span>
                         </div>
-                        <Button
+                        <ButtonLink
+                          href={`/reservation/${selectedDurationId}`}
                           variant="primary"
                           size="md"
                           withArrow
-                          disabled={!selectedDurationId}
-                          onClick={handleBook}
                         >
                           Réserver
-                        </Button>
+                        </ButtonLink>
                       </div>
                     </div>
                   ) : (

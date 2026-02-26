@@ -250,17 +250,17 @@ export default function HomePage() {
               Offrez à votre clientèle un service de bien-être d'exception, directement dans
               le confort de votre établissement. Zéro gestion, service clé en main.
             </Body>
-            <div className="flex gap-10 mt-2">
-              <div>
+            <div className="flex justify-center gap-12 mt-2">
+              <div className="flex flex-col items-center">
                 <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-earth-900)]" style={{ fontSize: 'var(--fs-h2)' }}>5</p>
                 <span className="label-eyebrow text-[var(--color-earth-700)]">Partenaires</span>
               </div>
-              <div>
+              <div className="flex flex-col items-center">
                 <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-earth-900)]" style={{ fontSize: 'var(--fs-h2)' }}>5/5</p>
                 <span className="label-eyebrow text-[var(--color-earth-700)]">Satisfaction</span>
               </div>
             </div>
-            <ButtonLink href="/professionnels" variant="outline" size="md" withArrow className="w-full sm:w-auto self-start border-[var(--color-earth-900)] text-[var(--color-earth-900)] hover:bg-[var(--color-earth-900)]/10">
+            <ButtonLink href="/professionnels" variant="outline" size="md" withArrow className="w-full self-center border-[var(--color-earth-900)] text-[var(--color-earth-900)] hover:bg-[var(--color-earth-900)]/10">
               Devenir partenaire
             </ButtonLink>
           </div>
