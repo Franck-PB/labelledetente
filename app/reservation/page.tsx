@@ -1,6 +1,6 @@
+import Link from 'next/link'
 import { Suspense } from 'react'
 import { SectionContainer } from '@/components/ui/SectionContainer'
-import { Body } from '@/components/ui/Typography'
 import { ReservationContent } from './ReservationContent'
 
 export const metadata = {
@@ -27,8 +27,14 @@ export default function ReservationPage() {
       {/* Progress bar — static shell */}
       <div className="fixed top-0 inset-x-0 z-[var(--z-sticky)] bg-[var(--color-cream-50)] border-b border-[var(--color-linen-200)]">
         <div className="mx-auto max-w-[var(--container-md)] px-[var(--page-gutter-mobile)] h-16 flex items-center justify-between">
-          <Body size="sm" className="label-eyebrow">Étape 1/2</Body>
-          <span className="label-eyebrow text-[var(--color-accent-600)]">Expérience</span>
+          <Link
+            href="/"
+            className="font-[family-name:var(--font-brand)] text-[var(--color-earth-900)] hover:text-[var(--color-accent-600)] transition-colors"
+            style={{ fontSize: 'var(--fs-brand-nav)' }}
+          >
+            La Belle Détente
+          </Link>
+          <span className="label-eyebrow text-[var(--color-accent-600)]">Étape 1 / 2</span>
         </div>
         <div className="h-0.5 bg-[var(--color-linen-200)]">
           <div className="h-full w-1/2 bg-[var(--color-accent-500)]" />

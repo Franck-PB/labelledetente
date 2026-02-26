@@ -101,11 +101,30 @@ export function ReservationContent() {
                   </div>
 
                   {isSelected ? (
-                    <DurationSelector
-                      options={exp.durations}
-                      value={selectedDurationId}
-                      onChange={setSelectedDurationId}
-                    />
+                    <div className="flex flex-col gap-4">
+                      <DurationSelector
+                        options={exp.durations}
+                        value={selectedDurationId}
+                        onChange={setSelectedDurationId}
+                      />
+                      <div className="flex items-center justify-between pt-2 border-t border-[var(--color-linen-200)]">
+                        <div className="flex flex-col">
+                          <Eyebrow className="text-[var(--color-stone-500)]">Total estimé</Eyebrow>
+                          <span className="font-[family-name:var(--font-display)] text-[var(--text-xl)] font-bold text-[var(--color-earth-900)]">
+                            {selectedDuration ? `${selectedDuration.price}€` : '—'}
+                          </span>
+                        </div>
+                        <Button
+                          variant="primary"
+                          size="md"
+                          withArrow
+                          disabled={!selectedDurationId}
+                          onClick={handleBook}
+                        >
+                          Réserver
+                        </Button>
+                      </div>
+                    </div>
                   ) : (
                     <button
                       className="
@@ -131,27 +150,6 @@ export function ReservationContent() {
           })}
         </div>
       </SectionContainer>
-
-      {/* Sticky bottom CTA */}
-      <div className="sticky bottom-0 inset-x-0 bg-[var(--color-surface)] border-t border-[var(--color-linen-200)] shadow-[var(--shadow-elevated)] pb-[env(safe-area-inset-bottom,0px)]">
-        <div className="mx-auto max-w-[var(--container-md)] px-[var(--page-gutter-mobile)] py-4 flex items-center justify-between gap-4">
-          <div className="flex flex-col">
-            <Eyebrow className="text-[var(--color-stone-500)]">Total estimé</Eyebrow>
-            <span className="font-[family-name:var(--font-display)] text-[var(--text-xl)] font-bold text-[var(--color-earth-900)]">
-              {selectedDuration ? `${selectedDuration.price}€` : '—'}
-            </span>
-          </div>
-          <Button
-            variant="primary"
-            size="md"
-            withArrow
-            disabled={!selectedDurationId}
-            onClick={handleBook}
-          >
-            Réserver
-          </Button>
-        </div>
-      </div>
     </>
   )
 }

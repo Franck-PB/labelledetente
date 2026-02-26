@@ -145,58 +145,44 @@ export default function HomePage() {
 
       {/* ── 3. SERVICES NARRATIFS ───────────────────────────────────── */}
       <SectionContainer background="cream" width="wide">
-        <div className="flex flex-col gap-24">
+        <div className="flex flex-col gap-10">
           {experiences.map((exp, i) => {
             const minPrice = getMinPrice(exp.id)
             const isEven = i % 2 === 0
             return (
               <article
                 key={exp.id}
-                className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-16 md:items-stretch`}
+                className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-8 md:gap-12 md:items-center`}
               >
-                <div className="w-full md:w-1/2">
+                <div className="w-full md:w-2/5">
                   <ImageBlock
                     src={exp.imageSrc ?? siteConfig.images?.hero ?? ''}
                     alt={exp.name}
-                    aspect="portrait"
+                    aspect="landscape"
                     radius="2xl"
                   />
                 </div>
-                <div className="w-full md:w-1/2 flex flex-col gap-5 text-center md:text-left md:justify-between md:py-2">
-                  <div className="flex flex-col gap-5">
-                    <Eyebrow>Le ressenti</Eyebrow>
-                    <Heading level={2} italic>{exp.name}</Heading>
-                    <Body size="lg" className="italic text-[var(--color-text-secondary)]">
-                      {exp.emotionalHook}
-                    </Body>
-                  </div>
-
-                  <div>
-                    <p className="label-eyebrow mb-3">Idéal pour…</p>
-                    <ul className="flex flex-col gap-2">
-                      {exp.idealFor.map((item) => (
-                        <li key={item} className="flex items-center justify-center md:justify-start gap-3">
-                          <span className="w-1 h-1 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" aria-hidden="true" />
-                          <Body size="sm">{item}</Body>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="flex flex-col gap-4">
-                    {minPrice !== null && (
-                      <p className="font-[family-name:var(--font-display)] text-[var(--color-stone-500)]" style={{ fontSize: 'var(--fs-body-sm)' }}>
-                        À partir de{' '}
-                        <span className="font-bold text-[var(--color-accent-600)]" style={{ fontSize: 'var(--fs-h3)' }}>
-                          {minPrice}€
-                        </span>
-                      </p>
-                    )}
-
-                    <ButtonLink href={`/prestations/${exp.id}`} variant="primary" size="md" withArrow className="self-center md:self-start">
-                      Choisir cette expérience
-                    </ButtonLink>
-                  </div>
+                <div className="w-full md:w-3/5 flex flex-col gap-4 text-center md:text-left">
+                  <Heading level={2} italic>{exp.name}</Heading>
+                  <Body size="lg" className="italic text-[var(--color-text-secondary)]">
+                    {exp.emotionalHook}
+                  </Body>
+                  <ul className="flex flex-col gap-2">
+                    {exp.idealFor.map((item) => (
+                      <li key={item} className="flex items-center justify-center md:justify-start gap-3">
+                        <span className="w-1 h-1 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" aria-hidden="true" />
+                        <Body size="sm">{item}</Body>
+                      </li>
+                    ))}
+                  </ul>
+                  {minPrice !== null && (
+                    <p className="font-[family-name:var(--font-display)] text-[var(--color-stone-500)]" style={{ fontSize: 'var(--fs-body-sm)' }}>
+                      À partir de{' '}
+                      <span className="font-bold text-[var(--color-accent-600)]" style={{ fontSize: 'var(--fs-h3)' }}>
+                        {minPrice}€
+                      </span>
+                    </p>
+                  )}
                 </div>
               </article>
             )
