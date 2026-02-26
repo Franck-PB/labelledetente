@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { SectionContainer } from '@/components/ui/SectionContainer'
 import { Heading, Eyebrow, Body, BrandScript } from '@/components/ui/Typography'
-import { ButtonLink } from '@/components/ui/Button'
 import { CalEmbed } from '@/components/ui/CalEmbed'
 import {
   getDurationById,
@@ -33,11 +33,14 @@ export default async function BookingEmbedPage({ params }: Props) {
       {/* Progress bar — step 2/2 */}
       <div className="fixed top-0 inset-x-0 z-[var(--z-sticky)] bg-[var(--color-cream-50)] border-b border-[var(--color-linen-200)]">
         <div className="mx-auto max-w-[var(--container-md)] px-[var(--page-gutter-mobile)] h-16 flex items-center justify-between">
-          <ButtonLink href="/reservation" variant="ghost" size="sm" className="px-0 gap-1">
-            ← Retour
-          </ButtonLink>
-          <Eyebrow>Étape 2/2</Eyebrow>
-          <span className="label-eyebrow text-[var(--color-accent-600)]">Agenda</span>
+          <Link
+            href="/"
+            className="font-[family-name:var(--font-brand)] text-[var(--color-earth-900)] hover:text-[var(--color-accent-600)] transition-colors"
+            style={{ fontSize: 'var(--fs-brand-nav)' }}
+          >
+            La Belle Détente
+          </Link>
+          <span className="label-eyebrow text-[var(--color-accent-600)]">Étape 2 / 2</span>
         </div>
         {/* Full progress fill */}
         <div className="h-0.5 bg-[var(--color-linen-200)]">

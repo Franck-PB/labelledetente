@@ -20,6 +20,9 @@ export function Header() {
 
   useEffect(() => { setMenuOpen(false) }, [pathname])
 
+  // Reservation pages have their own custom fixed headers
+  if (pathname.startsWith('/reservation')) return null
+
   return (
     <>
       <header className="fixed top-0 inset-x-0 z-[var(--z-sticky)] bg-[var(--color-cream-50)] border-b border-[var(--color-linen-200)] shadow-[var(--shadow-soft)]">
