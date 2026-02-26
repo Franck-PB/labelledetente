@@ -65,7 +65,7 @@ export default function HomePage() {
         </div>
 
         {/* Brand mark — upper hero area, below cream header */}
-        <div className="relative z-[var(--z-raised)] pt-20 md:pt-24 flex justify-center">
+        <div className="relative z-[var(--z-raised)] pt-20 md:pt-24 flex justify-center px-6">
           <p
             className="font-[family-name:var(--font-brand)] text-[var(--color-cream-50)] text-center drop-shadow-lg"
             style={{ fontSize: 'var(--fs-brand-hero)' }}
@@ -118,7 +118,7 @@ export default function HomePage() {
               href="/professionnels"
               variant="outline"
               size="lg"
-              className="border-[var(--color-cream-200)] text-[var(--color-cream-50)] hover:bg-[var(--color-cream-50)]/10"
+              className="border-white/70 text-[var(--color-cream-50)] bg-white/15 hover:bg-white/25"
             >
               Espace professionnel
             </ButtonLink>
