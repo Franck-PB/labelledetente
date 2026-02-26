@@ -23,8 +23,8 @@ export default function AProposPage() {
         <div className="flex flex-col md:flex-row gap-10 md:gap-16 items-center">
           <div className="w-full md:w-1/2">
             <ImageBlock
-              src="/images/service-facial.jpg"
-              alt="Soin du visage — La Belle Détente"
+              src="/images/service-summits.jpg"
+              alt="Massage — La Belle Détente"
               aspect="portrait"
               radius="2xl"
             />
