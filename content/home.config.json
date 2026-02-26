@@ -1,0 +1,34 @@
+{
+  "hero": {
+    "subtitle": "Votre parenthèse de bien-être absolu",
+    "description": "L'expérience spa haut de gamme, chez vous, dans votre résidence ou votre établissement.",
+    "proofs": [
+      { "label": "Déplacement inclus",            "icon": "✦" },
+      { "label": "Matériel professionnel fourni",  "icon": "✦" },
+      { "label": "Basée en Maurienne, Savoie",     "icon": "✦" }
+    ]
+  },
+  "intro": {
+    "eyebrow": "Le luxe de la sérénité",
+    "heading": "Une praticienne qui vient à vous",
+    "body": "Imaginez un espace de soin qui s'installe chez vous. La table chauffante, les huiles soigneusement choisies, le calme. Vous n'avez qu'à fermer les yeux — tout le reste est pris en charge."
+  },
+  "premium": [
+    {
+      "title": "Expérience spa",
+      "body": "Des techniques apprises en établissements haut de gamme, adaptées à votre espace."
+    },
+    {
+      "title": "Discrétion absolue",
+      "body": "Interventions soigneuses, silencieuses. Votre intimité est notre priorité."
+    },
+    {
+      "title": "Matériel complet",
+      "body": "Table chauffante, huiles bio, linge de qualité. Vous n'avez rien à prévoir."
+    }
+  ],
+  "cta": {
+    "signature": "Prenez soin de vous",
+    "body": "Offrez-vous une pause. Choisissez votre expérience et réservez le créneau qui vous convient."
+  }
+}

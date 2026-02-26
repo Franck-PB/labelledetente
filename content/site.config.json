@@ -1,0 +1,34 @@
+{
+  "brand": {
+    "name": "La Belle Détente",
+    "phone": "+33744436483",
+    "baseAreaLabel": "Maurienne, Savoie",
+    "legalAddress": "65 Imp. de Charrette, 73130 Saint-Étienne-de-Cuines",
+    "publicLocality": "Maurienne, Savoie"
+  },
+  "sections": {
+    "giftCards": false,
+    "englishVersion": false,
+    "testimonials": false,
+    "partners": true,
+    "ehpad": true,
+    "faq": true
+  },
+  "seo": {
+    "defaultLocale": "fr",
+    "locales": [
+      "fr",
+      "en"
+    ],
+    "indexBookingPage": false
+  },
+  "analytics": {
+    "provider": "plausible",
+    "domain": "labelledetente.fr",
+    "enabled": true
+  },
+  "images": {
+    "hero": "/images/hero-setup.jpg",
+    "sectionPro": "/images/section-pro.jpg"
+  }
+}

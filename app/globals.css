@@ -1,0 +1,327 @@
+@import "tailwindcss";
+
+/* ============================================================
+   LA BELLE DÉTENTE — Design System Tokens
+   Extracted from Stitch design references (Stich1.jpg, Stich2.jpg)
+   ============================================================ */
+
+@theme {
+  /* ----------------------------------------------------------
+     COLORS — Warm editorial palette
+     Inspired by: stone, sand, bark, earth tones from Alpine spa
+     ---------------------------------------------------------- */
+
+  /* Backgrounds */
+  --color-cream-50: #fdfaf6;
+  --color-cream-100: #f8f3ea;
+  --color-cream-200: #f0e8d8;
+
+  /* Sand / Surface */
+  --color-sand-100: #ede5d4;
+  --color-sand-200: #dfd5c0;
+  --color-sand-300: #cec1a8;
+
+  /* Borders / Dividers */
+  --color-linen-200: #e5dbc8;
+  --color-linen-300: #d4c9b3;
+  --color-linen-400: #bfb097;
+
+  /* Text */
+  --color-earth-50: #f5f0e8;
+  --color-earth-700: #6b5a46;
+  --color-earth-800: #4a3829;
+  --color-earth-900: #2c1e12;
+
+  /* Muted / Secondary text */
+  --color-stone-400: #b5a48e;
+  --color-stone-500: #9a8a74;
+  --color-stone-600: #7d6d58;
+
+  /* Accent — Warm Caramel (CTA, interactive elements) */
+  --color-accent-400: #c2955d;
+  --color-accent-500: #a97c45;
+  --color-accent-600: #8b6335;
+  --color-accent-700: #6e4e28;
+
+  /* Badge / Tag highlight (warm copper) */
+  --color-badge-bg: #f3ece0;
+  --color-badge-text: #9b7340;
+
+  /* White / Pure */
+  --color-white: #ffffff;
+
+  /* ----------------------------------------------------------
+     SEMANTIC ALIASES (used in components)
+     ---------------------------------------------------------- */
+  --color-background: var(--color-cream-50);
+  --color-surface: var(--color-white);
+  --color-surface-alt: var(--color-cream-100);
+  --color-border: var(--color-linen-200);
+  --color-border-subtle: var(--color-sand-100);
+
+  --color-text-primary: var(--color-earth-900);
+  --color-text-secondary: var(--color-stone-600);
+  --color-text-muted: var(--color-stone-400);
+  --color-text-on-accent: var(--color-earth-900);
+
+  --color-cta: var(--color-accent-400);
+  --color-cta-hover: var(--color-accent-500);
+
+  /* ----------------------------------------------------------
+     TYPOGRAPHY
+     ---------------------------------------------------------- */
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-brand: 'Satisfy', cursive;
+  --font-body: 'Playfair Display', Georgia, serif;
+  --font-mono: 'Menlo', 'Monaco', 'Courier New', monospace;
+
+  /* Type scale (fluid) */
+  --text-xs: 0.75rem;      /* 12px — labels, captions */
+  --text-sm: 0.875rem;     /* 14px — small body */
+  --text-base: 1rem;       /* 16px — body */
+  --text-lg: 1.125rem;     /* 18px — large body */
+  --text-xl: 1.25rem;      /* 20px — subheadings */
+  --text-2xl: 1.5rem;      /* 24px — section titles */
+  --text-3xl: 1.875rem;    /* 30px — page headings */
+  --text-4xl: 2.25rem;     /* 36px — hero headings */
+  --text-5xl: 3rem;        /* 48px — display headings */
+  --text-6xl: 3.75rem;     /* 60px — large display */
+
+  /* Line heights */
+  --leading-tight: 1.2;
+  --leading-snug: 1.35;
+  --leading-normal: 1.6;
+  --leading-relaxed: 1.75;
+
+  /* Letter spacing */
+  --tracking-tight: -0.02em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.08em;
+  --tracking-widest: 0.18em;
+
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* ----------------------------------------------------------
+     SPACING SCALE (4px base unit)
+     ---------------------------------------------------------- */
+  --spacing-1: 0.25rem;   /* 4px */
+  --spacing-2: 0.5rem;    /* 8px */
+  --spacing-3: 0.75rem;   /* 12px */
+  --spacing-4: 1rem;      /* 16px */
+  --spacing-5: 1.25rem;   /* 20px */
+  --spacing-6: 1.5rem;    /* 24px */
+  --spacing-8: 2rem;      /* 32px */
+  --spacing-10: 2.5rem;   /* 40px */
+  --spacing-12: 3rem;     /* 48px */
+  --spacing-14: 3.5rem;   /* 56px */
+  --spacing-16: 4rem;     /* 64px */
+  --spacing-20: 5rem;     /* 80px */
+  --spacing-24: 6rem;     /* 96px */
+  --spacing-32: 8rem;     /* 128px */
+  --spacing-40: 10rem;    /* 160px */
+  --spacing-48: 12rem;    /* 192px */
+
+  /* Page layout */
+  --page-gutter-mobile: 1.25rem;   /* 20px horizontal padding mobile */
+  --page-gutter-tablet: 2rem;      /* 32px tablet */
+  --page-gutter-desktop: 4rem;     /* 64px desktop */
+
+  /* ----------------------------------------------------------
+     CONTAINER / MAX WIDTHS
+     ---------------------------------------------------------- */
+  --container-sm: 44rem;    /* 704px  — reading / narrow text */
+  --container-md: 56rem;    /* 896px  — standard content */
+  --container-lg: 72rem;    /* 1152px — wide editorial layout */
+  --container-xl: 92rem;    /* 1472px — max site width */
+  --container-reading: 43rem; /* 688px — optimal long-form reading */
+
+  /* ----------------------------------------------------------
+     BORDER RADIUS
+     ---------------------------------------------------------- */
+  --radius-sm: 0.375rem;   /* 6px  — small elements */
+  --radius-md: 0.625rem;   /* 10px — cards, inputs */
+  --radius-lg: 0.875rem;   /* 14px — large cards */
+  --radius-xl: 1.25rem;    /* 20px — section cards */
+  --radius-2xl: 1.75rem;   /* 28px — image blocks */
+  --radius-full: 9999px;   /* pill — badges, tags */
+
+  /* ----------------------------------------------------------
+     SHADOWS
+     ---------------------------------------------------------- */
+  --shadow-soft: 0 1px 4px 0 rgba(44, 30, 18, 0.06), 0 4px 16px 0 rgba(44, 30, 18, 0.04);
+  --shadow-card: 0 2px 8px 0 rgba(44, 30, 18, 0.08), 0 8px 32px 0 rgba(44, 30, 18, 0.06);
+  --shadow-elevated: 0 4px 16px 0 rgba(44, 30, 18, 0.12), 0 16px 48px 0 rgba(44, 30, 18, 0.08);
+  --shadow-inset: inset 0 1px 3px 0 rgba(44, 30, 18, 0.08);
+
+  /* ----------------------------------------------------------
+     Z-INDEX HIERARCHY
+     ---------------------------------------------------------- */
+  --z-base: 0;
+  --z-raised: 10;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-overlay: 300;
+  --z-modal: 400;
+  --z-toast: 500;
+
+  /* ----------------------------------------------------------
+     TRANSITIONS
+     ---------------------------------------------------------- */
+  --duration-fast: 150ms;
+  --duration-base: 250ms;
+  --duration-slow: 400ms;
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --ease-out: cubic-bezier(0, 0, 0.2, 1);
+
+  /* ----------------------------------------------------------
+     BREAKPOINTS
+     ---------------------------------------------------------- */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+}
+
+/* ============================================================
+   FLUID TYPE SCALE — hors @theme pour garantir la résolution
+   de clamp() par le navigateur (pas de pré-traitement Tailwind).
+   Formule : clamp(min-mobile, Xvw, max-grand-écran)
+   À 1440px : body ≈ 25px, h2 ≈ 58px, display ≈ 101px.
+   À 1900px : body ≈ 33px, h2 ≈ 76px, display ≈ 133px.
+   ============================================================ */
+
+:root {
+  /* Hero display heading  — 32px mobile → 192px max */
+  --fs-display:    clamp(2rem, 7vw, 12rem);
+  /* Page / section h1    — 28px mobile → 144px max */
+  --fs-h1:         clamp(1.75rem, 5.5vw, 9rem);
+  /* Section h2           — 24px mobile → 112px max */
+  --fs-h2:         clamp(1.5rem, 4vw, 7rem);
+  /* Card / sub h3        — 20px mobile → 80px max */
+  --fs-h3:         clamp(1.25rem, 3vw, 5rem);
+  /* Body large           — 18px mobile → 48px max */
+  --fs-body-lg:    clamp(1.125rem, 2vw, 3rem);
+  /* Body base            — 16px mobile → 40px max */
+  --fs-body:       clamp(1rem, 1.75vw, 2.5rem);
+  /* Body small           — 14px mobile → 32px max */
+  --fs-body-sm:    clamp(0.875rem, 1.4vw, 2rem);
+  /* Eyebrow / label      — 11px mobile → 24px max */
+  --fs-eyebrow:    clamp(0.7rem, 1vw, 1.5rem);
+  /* Nav items            — 14px mobile → 28px max */
+  --fs-nav:        clamp(0.875rem, 1.1vw, 1.75rem);
+  /* Brand name in nav    — 24px mobile → 88px max */
+  --fs-brand-nav:  clamp(1.5rem, 3vw, 5.5rem);
+  /* Brand mark on hero   — 40px mobile → 256px max */
+  --fs-brand-hero: clamp(2.5rem, 10vw, 16rem);
+}
+
+/* ============================================================
+   BASE STYLES
+   ============================================================ */
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: 16px;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-text-primary);
+    font-family: var(--font-body);
+    font-size: var(--text-base);
+    line-height: var(--leading-normal);
+    font-weight: var(--font-weight-regular);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus visible for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-500);
+    outline-offset: 3px;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-sand-100);
+    color: var(--color-earth-900);
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+/* ============================================================
+   COMPONENT LAYER — shared patterns
+   ============================================================ */
+
+@layer components {
+
+  /* Section rhythm — generous luxury breathing room */
+  .section-gap {
+    padding-block: clamp(5rem, 9vw, 12rem);
+  }
+
+  /* Label / eyebrow text — uppercase tracked */
+  .label-eyebrow {
+    font-family: var(--font-body);
+    font-size: var(--fs-eyebrow);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    color: var(--color-accent-500);
+  }
+
+  /* Divider line — warm */
+  .divider {
+    height: 1px;
+    background-color: var(--color-border);
+  }
+
+  /* Badge / tag pill */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.75rem;
+    background-color: var(--color-badge-bg);
+    color: var(--color-badge-text);
+    font-family: var(--font-body);
+    font-size: var(--text-xs);
+    font-weight: var(--font-weight-semibold);
+    letter-spacing: var(--tracking-widest);
+    text-transform: uppercase;
+    border-radius: var(--radius-full);
+  }
+}

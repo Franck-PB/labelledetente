@@ -1,0 +1,15 @@
+{
+  "provider": "cal.com",
+  "username": "franck-d-6eq1wk",
+  "publicProfile": "https://cal.com/franck-d-6eq1wk",
+  "fallbackEventSlug": "30min",
+  "fallbackRoute": "/reservation",
+  "mapping": {
+    "summit60":   "30min",
+    "summit90":   "30min",
+    "alpine60":   "30min",
+    "alpine90":   "30min",
+    "elegance60": "30min",
+    "elegance90": "30min"
+  }
+}
