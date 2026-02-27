@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, Satisfy } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { StickyBookingCTA } from '@/components/ui/StickyBookingCTA'
@@ -58,6 +59,7 @@ export default function RootLayout({
         <main>{children}</main>
         <Footer />
         <StickyBookingCTA />
+        <Analytics />
       </body>
     </html>
   )
