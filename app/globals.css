@@ -222,6 +222,32 @@
 }
 
 /* ============================================================
+   FLUID TYPE CAP — au-dessus de 1600px les polices ne grossissent plus.
+   Valeurs = celles atteintes exactement à 1600px par les formules clamp().
+   En dessous de 1600px, le clamp() reprend naturellement.
+   ============================================================ */
+
+@media (min-width: 100rem) {
+  :root {
+    --fs-display:    7rem;
+    --fs-h1:         5.5rem;
+    --fs-h2:         4rem;
+    --fs-h3:         3rem;
+    --fs-body-lg:    2rem;
+    --fs-body:       1.75rem;
+    --fs-body-sm:    1.4rem;
+    --fs-eyebrow:    1rem;
+    --fs-nav:        1.1rem;
+    --fs-brand-nav:  3rem;
+    --fs-brand-hero: 10rem;
+  }
+
+  .section-gap {
+    padding-block: 9rem;
+  }
+}
+
+/* ============================================================
    BASE STYLES
    ============================================================ */
 

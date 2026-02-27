@@ -45,7 +45,7 @@ export default function PrestationsPage() {
                 className={`flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} gap-10 md:gap-16 items-start`}
               >
                 {/* Image */}
-                <div className="w-full md:w-5/12 sticky top-24">
+                <div className="w-full md:w-5/12 md:sticky md:top-24">
                   <ImageBlock
                     src={exp.imageSrc ?? ''}
                     alt={exp.name}
@@ -105,7 +105,7 @@ export default function PrestationsPage() {
                     href={`/reservation?experience=${exp.id}`}
                     size="md"
                     withArrow
-                    className="self-start"
+                    className="w-full justify-center max-[387px]:tracking-[0.06em] md:w-auto md:self-start md:justify-start"
                   >
                     Choisir cette expérience
                   </ButtonLink>

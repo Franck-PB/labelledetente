@@ -127,7 +127,7 @@ const DurationSelector = ({
                 </span>
 
                 {option.recommended && (
-                  <span className="badge">Recommandé</span>
+                  <span className="badge max-[364px]:hidden">Recommandé</span>
                 )}
               </div>
 

@@ -232,7 +232,7 @@ export default function HomePage() {
             <div key={p.title} className="flex flex-col gap-3 text-center">
               <span className="mx-auto text-[var(--color-accent-400)] text-2xl" aria-hidden="true">✦</span>
               <Heading level={3}>{p.title}</Heading>
-              <Body muted>{p.body}</Body>
+              <Body className="text-[var(--color-earth-800)]">{p.body}</Body>
             </div>
           ))}
         </div>
@@ -246,18 +246,18 @@ export default function HomePage() {
             <Heading level={2} italic className="text-[var(--color-earth-900)]">
               Sublimez l'expérience de vos hôtes
             </Heading>
-            <Body size="lg" className="text-[var(--color-earth-800)]">
+            <Body size="lg" className="text-[#E0DACC]">
               Offrez à votre clientèle un service de bien-être d'exception, directement dans
               le confort de votre établissement. Zéro gestion, service clé en main.
             </Body>
             <div className="flex justify-center gap-12 mt-2">
               <div className="flex flex-col items-center">
                 <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-earth-900)]" style={{ fontSize: 'var(--fs-h2)' }}>5</p>
-                <span className="label-eyebrow text-[var(--color-earth-700)]">Partenaires</span>
+                <span className="label-eyebrow text-[var(--color-earth-900)]">Partenaires</span>
               </div>
               <div className="flex flex-col items-center">
                 <p className="font-[family-name:var(--font-display)] font-bold text-[var(--color-earth-900)]" style={{ fontSize: 'var(--fs-h2)' }}>5/5</p>
-                <span className="label-eyebrow text-[var(--color-earth-700)]">Satisfaction</span>
+                <span className="label-eyebrow text-[var(--color-earth-900)]">Satisfaction</span>
               </div>
             </div>
             <ButtonLink href="/professionnels" variant="outline" size="md" withArrow className="w-full self-center border-[var(--color-earth-900)] text-[var(--color-earth-900)] hover:bg-[var(--color-earth-900)]/10">
