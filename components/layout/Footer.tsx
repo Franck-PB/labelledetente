@@ -20,7 +20,7 @@ export function Footer() {
 
   return (
     <footer className="bg-[var(--color-accent-700)] text-[var(--color-cream-50)]">
-      <div className="mx-auto max-w-[var(--container-xl)] px-[var(--page-gutter-mobile)] md:px-[var(--page-gutter-tablet)] lg:px-[var(--page-gutter-desktop)] py-16">
+      <div className="mx-auto max-w-[var(--container-xl)] px-[var(--page-gutter-mobile)] md:px-[var(--page-gutter-tablet)] lg:px-[var(--page-gutter-desktop)] py-16 pb-28 md:pb-16">
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-8">
 
