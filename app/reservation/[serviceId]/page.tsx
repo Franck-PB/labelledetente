@@ -84,7 +84,7 @@ export default async function BookingEmbedPage({ params }: Props) {
             shadow-[var(--shadow-card)]
             bg-[var(--color-surface)]
           ">
-            <CalEmbed calLink={calLink} minHeight={650} />
+            <CalEmbed calLink={calLink} minHeight={650} duration={parseInt(duration.label)} />
           </div>
 
           {/* Direct link fallback (accessible, always visible) */}

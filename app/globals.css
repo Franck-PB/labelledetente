@@ -37,15 +37,15 @@
   --color-stone-500: #9a8a74;
   --color-stone-600: #7d6d58;
 
-  /* Accent — Warm Caramel (CTA, interactive elements) */
-  --color-accent-400: #c2955d;
-  --color-accent-500: #a97c45;
-  --color-accent-600: #8b6335;
-  --color-accent-700: #6e4e28;
+  /* Accent — Warm Greige/Taupe (CTA, interactive elements) */
+  --color-accent-400: #c2b1a1;
+  --color-accent-500: #a89485;
+  --color-accent-600: #8b7265;
+  --color-accent-700: #6b5448;
 
-  /* Badge / Tag highlight (warm copper) */
-  --color-badge-bg: #f3ece0;
-  --color-badge-text: #9b7340;
+  /* Badge / Tag highlight (soft greige) */
+  --color-badge-bg: #f0ebe4;
+  --color-badge-text: #8b7265;
 
   /* White / Pure */
   --color-white: #ffffff;
