@@ -3,7 +3,6 @@ import { SectionContainer } from '@/components/ui/SectionContainer'
 import { Display, Heading, Eyebrow, Body } from '@/components/ui/Typography'
 import { ButtonLink } from '@/components/ui/Button'
 import { ImageBlock } from '@/components/ui/ImageBlock'
-import { DurationSelector } from '@/components/ui/DurationSelector'
 import { getAllExperiences } from '@/lib/services'
 
 export const metadata: Metadata = {
@@ -69,8 +68,8 @@ export default function PrestationsPage() {
                     <Eyebrow className="mb-3">Idéal pour…</Eyebrow>
                     <ul className="flex flex-col gap-2">
                       {exp.idealFor.map((item) => (
-                        <li key={item} className="flex items-start gap-3">
-                          <span className="mt-1.5 w-1 h-1 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" aria-hidden="true" />
+                        <li key={item} className="flex items-center gap-3">
+                          <span className="w-1 h-1 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" aria-hidden="true" />
                           <Body size="sm">{item}</Body>
                         </li>
                       ))}
@@ -82,7 +81,7 @@ export default function PrestationsPage() {
                     <Eyebrow className="mb-3">Votre moment</Eyebrow>
                     <ol className="flex flex-col gap-2">
                       {exp.flow.map((step, idx) => (
-                        <li key={step} className="flex items-start gap-4">
+                        <li key={step} className="flex items-center gap-4">
                           <span className="
                             flex-shrink-0 w-6 h-6 rounded-full
                             bg-[var(--color-badge-bg)] text-[var(--color-badge-text)]
@@ -97,18 +96,21 @@ export default function PrestationsPage() {
                     </ol>
                   </div>
 
-                  {/* Duration selector — affichage statique sur cette page */}
-                  <DurationSelector options={exp.durations} groupLabel="Durées disponibles" />
-
-                  {/* CTA */}
-                  <ButtonLink
-                    href={`/reservation?experience=${exp.id}`}
-                    size="md"
-                    withArrow
-                    className="w-full justify-center max-[387px]:tracking-[0.06em] md:w-auto md:self-start md:justify-start"
-                  >
-                    Choisir cette expérience
-                  </ButtonLink>
+                  {/* CTA — un bouton par durée, accès direct au créneau */}
+                  <div className="flex flex-col gap-3">
+                    {exp.durations.map((duration) => (
+                      <ButtonLink
+                        key={duration.id}
+                        href={`/reservation/${duration.id}`}
+                        variant={duration.recommended ? 'primary' : 'outline'}
+                        size="md"
+                        className="w-full justify-between"
+                      >
+                        <span>{duration.label}</span>
+                        <span className="font-[family-name:var(--font-display)] font-bold">{duration.price}€</span>
+                      </ButtonLink>
+                    ))}
+                  </div>
                 </div>
               </article>
             )

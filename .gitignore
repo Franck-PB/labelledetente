@@ -42,3 +42,10 @@ next-env.d.ts
 
 # Archives & fichiers non utilisés (références design, screenshots de travail)
 /Inutile/
+
+# Fichiers source de travail dans docs/ (images, documents Word)
+docs/*.jpg
+docs/*.jpeg
+docs/*.png
+docs/*.docx
+docs/~$*

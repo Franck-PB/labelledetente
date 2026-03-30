@@ -46,7 +46,7 @@ export default function HomePage() {
       )}
 
       {/* ── 1. HERO ─────────────────────────────────────────────────── */}
-      <section className="relative min-h-[62vh] md:min-h-[70vh] flex flex-col bg-[var(--color-earth-900)]" aria-label="Introduction">
+      <section className="relative min-h-[62vh] xl:min-h-[70vh] flex flex-col bg-[var(--color-earth-900)]" aria-label="Introduction">
         {/* Background image */}
         <div className="absolute inset-0">
           <ImageBlock
@@ -59,9 +59,9 @@ export default function HomePage() {
             containerClassName="w-full h-full !aspect-auto absolute inset-0"
           />
           {/* Flat overlay — base darkness for text readability on any image */}
-          <div className="absolute inset-0 bg-black/45 pointer-events-none" />
+          <div className="absolute inset-0 bg-black/35 pointer-events-none" />
           {/* Atmospheric gradient — depth from top, preserves image at base */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/15 to-transparent pointer-events-none" />
         </div>
 
         {/* Brand mark — upper hero area, below cream header */}
@@ -79,8 +79,8 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Spacer — pushes text block to bottom */}
-        <div className="flex-1" />
+        {/* Spacer — gap proportionnel, capé pour cohérence cross-breakpoint */}
+        <div className="flex-1 min-h-[4vh] max-h-[10vh]" />
 
         {/* Text + CTA block — bottom of hero, intentionally compact */}
         <div className="relative z-[var(--z-raised)] pb-12 md:pb-20 px-[var(--page-gutter-mobile)] md:px-[var(--page-gutter-tablet)] lg:px-[var(--page-gutter-desktop)] max-w-[var(--container-lg)] mx-auto w-full">

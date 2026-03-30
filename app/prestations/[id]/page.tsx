@@ -63,21 +63,23 @@ export default async function ExperienceDetailPage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd(crumbs)) }}
       />
 
-      {/* Hero image + title overlay */}
-      <section className="relative min-h-[70vh] flex flex-col justify-end bg-[var(--color-earth-900)]">
+      {/* Image + overlay titre */}
+      <section className="relative w-full h-[33vh] overflow-hidden flex flex-col justify-end bg-[var(--color-earth-900)]">
         <div className="absolute inset-0">
           <ImageBlock
             src={exp.imageSrc ?? ''}
             alt={exp.name}
-            aspect="hero"
+            aspect="wide"
             radius="none"
-            overlay="bottom"
             containerClassName="w-full h-full !aspect-auto absolute inset-0"
           />
+          {/* Dégradé bas pour lisibilité du texte */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/25 to-transparent pointer-events-none" />
         </div>
-        <div className="relative z-[var(--z-raised)] px-[var(--page-gutter-mobile)] md:px-[var(--page-gutter-tablet)] pb-12 max-w-[var(--container-md)] mx-auto w-full">
-          <Badge className="mb-4">Signature</Badge>
-          <Display as="h1" italic className="text-[var(--color-white)] mb-4">{exp.name}</Display>
+
+        <div className="relative z-[var(--z-raised)] px-[var(--page-gutter-mobile)] md:px-[var(--page-gutter-tablet)] pb-6 max-w-[var(--container-md)] mx-auto w-full">
+          <Badge className="mb-3">Signature</Badge>
+          <Display as="h1" italic className="text-[var(--color-white)] mb-3">{exp.name}</Display>
           <div className="flex items-center gap-4 text-[var(--color-cream-200)]">
             <span className="font-[family-name:var(--font-body)] text-[var(--text-sm)]">
               {exp.durations.map((d) => d.label).join(' · ')}
@@ -105,8 +107,8 @@ export default async function ExperienceDetailPage({ params }: Props) {
             <Eyebrow className="mb-4">Idéal pour…</Eyebrow>
             <ul className="flex flex-col gap-3">
               {exp.idealFor.map((item) => (
-                <li key={item} className="flex items-start gap-4">
-                  <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" />
+                <li key={item} className="flex items-center gap-4">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[var(--color-accent-400)] flex-shrink-0" />
                   <Body>{item}</Body>
                 </li>
               ))}
@@ -117,11 +119,11 @@ export default async function ExperienceDetailPage({ params }: Props) {
             <Eyebrow className="mb-4">Votre moment</Eyebrow>
             <ol className="flex flex-col gap-3">
               {exp.flow.map((step, idx) => (
-                <li key={step} className="flex items-start gap-4">
+                <li key={step} className="flex items-center gap-4">
                   <span className="flex-shrink-0 w-7 h-7 rounded-full bg-[var(--color-badge-bg)] text-[var(--color-badge-text)] font-bold text-[var(--text-xs)] flex items-center justify-center font-[family-name:var(--font-body)]">
                     {idx + 1}
                   </span>
-                  <Body className="pt-1">{step}</Body>
+                  <Body>{step}</Body>
                 </li>
               ))}
             </ol>
@@ -137,7 +139,7 @@ export default async function ExperienceDetailPage({ params }: Props) {
           {exp.durations.map((duration) => (
             <ButtonLink
               key={duration.id}
-              href={`/reservation?experience=${exp.id}&duration=${duration.id}`}
+              href={`/reservation/${duration.id}`}
               variant={duration.recommended ? 'primary' : 'outline'}
               size="lg"
               className="w-full justify-between"
