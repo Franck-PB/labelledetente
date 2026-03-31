@@ -48,7 +48,6 @@ Important directories:
 - `/content` → business content (JSON + Markdown)
 - `/docs` → PRD and architecture decisions
 - `/prompts` → task instructions
-- `/skills` → reusable development skills
 - `/components` → UI components
 - `/lib` → business logic layer
 - `/scripts` → validation scripts
@@ -57,13 +56,13 @@ Important directories:
 
 ## Skills Usage (IMPORTANT)
 
-You MUST automatically use all available skills located in: /skills
-Skills represent reusable project knowledge and must be preferred over inventing new patterns.
+Skills are centralized in `/Users/franck_seize/Documents/Developper/skills` (shared across all projects).
+Do NOT duplicate them inside this repository.
 
-If a skill already solves a problem:
+Consult that directory first. If a skill already solves a problem:
 → reuse it.
 
-Do not duplicate logic already covered by skills.
+Only create a local skill if it is strictly specific to this project AND needs to be versioned.
 
 ---
 
